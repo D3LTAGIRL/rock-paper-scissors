@@ -8,10 +8,15 @@ function getComputerChoice() {
     // choose the option that corresponds to that random number & return it
     switch (result) {
         case 0:
-            return "rock";
+            return "r";
         case 1:
-            return "paper";
+            return "p";
         case 2:
-            return "scissors";
+            return "s";
     }
+}
+
+function getHumanChoice() {
+    // prompt the user for a choice between rock paper or scissors
+    return prompt("(R)ock, (P)aper, (S)cissors!")
 }
