@@ -11,7 +11,7 @@ function playGame() {
     if (humanScore === 3) {
         console.log("You Win! Man triumphs over Machine!");
     } else {
-        console.log("Computer Wins! Oh man... soon robots will be taking our jobs too...");
+        console.log("You Lost! Oh man... soon computers will be taking our jobs too...");
     }
     
     function getComputerChoice() {
