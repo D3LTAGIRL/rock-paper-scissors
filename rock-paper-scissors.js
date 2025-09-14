@@ -8,6 +8,11 @@ function playGame() {
     while (humanScore !== 3 && computerScore !== 3) {
         playRound(getHumanChoice(), getComputerChoice());
     }
+    if (humanScore === 3) {
+        console.log("You Win! Man triumphs over Machine!");
+    } else {
+        console.log("Computer Wins! Oh man... soon robots will be taking our jobs too...");
+    }
     
     function getComputerChoice() {
 
