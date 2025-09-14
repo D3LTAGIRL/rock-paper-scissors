@@ -1,7 +1,10 @@
-console.log("Hello Bozo")
+
+playGame()
+
 function playGame() {
 
-    let humanScore, computerScore = 0;
+    let humanScore = computerScore = 0;
+
     while (humanScore !== 3 && computerScore !== 3) {
         playRound(getHumanChoice(), getComputerChoice());
     }
