@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #402d74;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-buttons {
+    display: flex;
+    gap: 8px
+}
+
+.game-buttons button {
+    font-family: inherit;
+    background-color: rgb(47, 40, 90);
+    border: 2px solid #27223f;
+    color: #d6cef5;
+    font-weight: inherit;
+}
