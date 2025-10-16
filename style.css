@@ -10,7 +10,8 @@ body {
     gap: 8px;
 }
 
-.game-buttons {
+.choice-buttons {
+    align-self: baseline;
     display: flex;
     gap: 8px;
     background-color: #312962;
@@ -18,22 +19,38 @@ body {
     padding: 8px 24px;
 }
 
-.game-buttons button {
+.choice-buttons button {
     font-family: inherit;
-    background-color: #2f285a;
-    border-radius: 2px;
-    border: 2px solid #27223f;
-    color: #d6cef5;
+    background-color: transparent;
+    border-radius: 100%;
+    border: transparent;
+    filter: drop-shadow(0 0 3px #a890e9);
+    color: #ab8dff;
     font-weight: inherit;
+    padding: 0px;
+    font-size: 0px;
+    cursor: pointer;
+}
+
+.choice-buttons button.selected {
+    filter: drop-shadow(0 0 5px #c6b1ff);
+}
+
+.choice-buttons button img {
+    flex: 1 1;
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    filter: invert();
 }
 
 .match-score-container {
     display: flex;
     border-radius: 2px;
     background: hsla(248, 41%, 27%, 1);
-    background: linear-gradient(180deg, hsla(248, 41%, 27%, 1) 40%, hsla(49, 41%, 27%, 1) 60%);
-    background: -moz-linear-gradient(180deg, hsla(248, 41%, 27%, 1) 40%, hsla(49, 41%, 27%, 1) 60%);
-    background: -webkit-linear-gradient(180deg, hsla(248, 41%, 27%, 1) 40%, hsla(49, 41%, 27%, 1) 60%);
+    background: linear-gradient(180deg, hsla(248, 41%, 27%, 1) 42%, hsla(49, 41%, 27%, 1) 58%);
+    background: -moz-linear-gradient(180deg, hsla(248, 41%, 27%, 1) 42%, hsla(49, 41%, 27%, 1) 58%);
+    background: -webkit-linear-gradient(180deg, hsla(248, 41%, 27%, 1) 42%, hsla(49, 41%, 27%, 1) 58%);
     padding: 8px;
     align-self: stretch;
     justify-content: space-between;
@@ -42,7 +59,6 @@ body {
 .score-display {
     justify-items: stretch;
     flex: 4 4;
-    background-color: #2f285a;
     padding: 8px;
     display: flex;
     border-radius: 2px;
@@ -55,8 +71,14 @@ body {
 
 }
 
+.player-score {
+    background-color: #2e2953;
+    flex-direction: row-reverse;
+}
+
 .computer-score {
     background-color: #5a4e28;
+    flex-direction: row;
 }
 
 .score-display div {
@@ -75,9 +97,11 @@ body {
 }
 
 .player-score .scored {
-    background-color: #4400ff;
+    background-color: #703cff;
+    filter: drop-shadow(0 0 2px #4400ff);
 }
 
 .computer-score .scored {
-    background-color: #ffd900;
+    background-color: #ffe23e;
+    filter: drop-shadow(0 0 2px #ffd900);
 }
