@@ -4,6 +4,10 @@ body {
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #402d74;
+    background: hsla(248, 41%, 27%, 1);
+    background: linear-gradient(180deg, rgb(80, 68, 160) 42%, rgb(158, 141, 66) 58%);
+    background: -moz-linear-gradient(180deg, rgb(80, 68, 160) 42%, rgb(158, 141, 66) 58%);
+    background: -webkit-linear-gradient(180deg, rgb(80, 68, 160) 42%, rgb(158, 141, 66) 58%);
     font-weight: 600;
     justify-content: center;
     align-items: center;
@@ -11,20 +15,45 @@ body {
 }
 
 .choice-buttons {
-    align-self: baseline;
+    justify-content: stretch;
     display: flex;
     gap: 8px;
-    background-color: #312962;
-    border-radius: 2px;
-    padding: 8px 24px;
 }
 
-.choice-buttons button {
+.choice-container {
+    align-self: stretch;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #312962;
+    background: #302961;
+    background: linear-gradient(180deg, rgb(80, 68, 160) 42%, rgb(158, 141, 66) 58%);
+    background: -moz-linear-gradient(180deg, rgb(80, 68, 160) 42%, rgb(158, 141, 66) 58%);
+    background: -webkit-linear-gradient(180deg, #312962 42%, rgb(93, 83, 39) 58%);
+    border-radius: 2px;
+    padding: 8px 8px;
+}
+
+#confirm-button {
+    padding: 2px 8px;
+    font-family: inherit;
+    border: 3px solid white;
+    background-color: transparent;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+#confirm-button:enabled {
+    filter: drop-shadow(0 0 3px #fff)
+}
+
+.choice-buttons img {
     font-family: inherit;
     background-color: transparent;
     border-radius: 100%;
     border: transparent;
-    filter: drop-shadow(0 0 3px #a890e9);
     color: #ab8dff;
     font-weight: inherit;
     padding: 0px;
@@ -32,11 +61,23 @@ body {
     cursor: pointer;
 }
 
-.choice-buttons button.selected {
-    filter: drop-shadow(0 0 5px #c6b1ff);
+.choice-buttons img.selected {
+    scale: 1.25;
+    filter: invert() drop-shadow(0 0 3px #fff);
 }
 
-.choice-buttons button img {
+.choice-buttons img:hover {
+    scale: 1.05;
+}
+
+.choice-buttons img.selected:hover {
+    scale: 1.3;
+}
+
+.choice-buttons img {
+    scale: 1;
+    transition: scale 0.2s;
+    transition-timing-function: ease-out;
     flex: 1 1;
     width: 60px;
     padding: 0px;
@@ -44,7 +85,7 @@ body {
     filter: invert();
 }
 
-.match-score-container {
+.match-score-container, .choice-display-container {
     display: flex;
     border-radius: 2px;
     background: hsla(248, 41%, 27%, 1);
@@ -64,6 +105,25 @@ body {
     border-radius: 2px;
     gap: 8px;
     min-width: 82px;
+}
+
+.player-icon {
+    filter: drop-shadow(0 0 2px #ffd900) brightness(0) saturate(100%) invert(21%) sepia(59%) saturate(3910%) hue-rotate(249deg) brightness(106%) contrast(104%);
+    width: 60px;
+}
+
+.computer.choice-display {
+    display: flex;
+}
+
+.player.choice-display {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.computer-icon {
+    filter: drop-shadow(0 0 2px #ffd900) brightness(0) saturate(100%) invert(85%) sepia(82%) saturate(530%) hue-rotate(325deg) brightness(104%) contrast(105%);
+    width: 60px;
 }
 
 .separator {
