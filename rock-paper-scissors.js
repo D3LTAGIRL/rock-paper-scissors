@@ -1,14 +1,39 @@
+let currentChoice = null;
 
-playGame()
+const rockImg = "img/rock-icon.svg";
+const paperImg = "img/paper-icon.svg";
+const scissorsImg = "img/scissors-icon.svg";
+const questionImg = "img/question-icon.svg";
+
+let choiceButtons = document.querySelectorAll(".choice-buttons img");
+let confirmButton = document.querySelector("#confirm-button");
+
+choiceButtons.forEach((element) => element.addEventListener("click", updateChoice))
+
+function updateChoice(event) {
+    let choice = event.target.id.split("-")[0];
+    console.log(currentChoice);
+    if (choice !== currentChoice) {
+        choiceButtons.forEach((choiceButton) => choiceButton.classList.remove("selected"))
+        currentChoice = choice;
+        event.target.classList.add("selected");
+        confirmButton.removeAttribute("disabled");
+        return;
+    } else {
+        currentChoice = null;
+        event.target.classList.remove("selected");
+        confirmButton.setAttribute("disabled", "disabled");
+    }
+}
 
 function playGame() {
 
     let humanScore = computerScore = 0;
 
-    while (humanScore !== 3 && computerScore !== 3) {
+    while (humanScore !== 5 && computerScore !== 5) {
         playRound(getHumanChoice(), getComputerChoice());
     }
-    if (humanScore === 3) {
+    if (humanScore === 5) {
         console.log("You Win! Man triumphs over machine!");
     } else {
         console.log("You Lost! Oh man... soon computers will be taking our jobs too...");
@@ -17,7 +42,7 @@ function playGame() {
     function getComputerChoice() {
 
         // generate a random number from 0-2 (3 possibilities)
-        result = Math.floor(Math.random() * 3)
+        let result = Math.floor(Math.random() * 3)
         
         // choose the option that corresponds to that random number & return it
         switch (result) {
