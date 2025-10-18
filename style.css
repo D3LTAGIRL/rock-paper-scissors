@@ -108,7 +108,7 @@ body {
 }
 
 .player-icon {
-    filter: drop-shadow(0 0 2px #ffd900) brightness(0) saturate(100%) invert(21%) sepia(59%) saturate(3910%) hue-rotate(249deg) brightness(106%) contrast(104%);
+    filter: brightness(0) saturate(100%) invert(42%) sepia(69%) saturate(666%) hue-rotate(215deg) brightness(103%) contrast(101%) drop-shadow(0 0 2px #4400ff);
     width: 60px;
 }
 
@@ -122,7 +122,7 @@ body {
 }
 
 .computer-icon {
-    filter: drop-shadow(0 0 2px #ffd900) brightness(0) saturate(100%) invert(85%) sepia(82%) saturate(530%) hue-rotate(325deg) brightness(104%) contrast(105%);
+    filter: brightness(0) saturate(100%) invert(85%) sepia(82%) saturate(530%) hue-rotate(325deg) brightness(104%) contrast(105%) drop-shadow(0 0 2px #ffbf00);
     width: 60px;
 }
 
@@ -157,11 +157,11 @@ body {
 }
 
 .player-score .scored {
-    background-color: #703cff;
+    background-color: #926bff;
     filter: drop-shadow(0 0 2px #4400ff);
 }
 
 .computer-score .scored {
     background-color: #ffe23e;
-    filter: drop-shadow(0 0 2px #ffd900);
+    filter: drop-shadow(0 0 2px #ffbf00);
 }
