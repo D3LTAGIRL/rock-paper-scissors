@@ -5,6 +5,9 @@ const paperImg = "img/paper-icon.svg";
 const scissorsImg = "img/scissors-icon.svg";
 const questionImg = "img/question-icon.svg";
 
+const playerChoiceIcon = document.querySelector(".player-choice");
+const computerChoiceIcon = document.querySelector(".computer-choice");
+
 let choiceButtons = document.querySelectorAll(".choice-buttons img");
 let confirmButton = document.querySelector("#confirm-button");
 
@@ -23,6 +26,36 @@ function updateChoice(event) {
         currentChoice = null;
         event.target.classList.remove("selected");
         confirmButton.setAttribute("disabled", "disabled");
+    }
+}
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    // update choice icons
+    playerChoiceIcon.src = "img/" + humanChoice + "-icon.svg";
+    computerChoiceIcon.src = "img/" + computerChoice + "-icon.svg";
+
+    // wait a bit
+    // increase score if someone won
+
+    if (humanChoice === computerChoice) {
+        console.log(`it's a tie! you both picked ${humanChoice}`)
+    }
+
+    if (humanChoice === "rock" && computerChoice === "scissors" ||
+        humanChoice === "paper" && computerChoice === "rock" ||
+        humanChoice === "scissors" && computerChoice === "paper"
+        ) {
+        console.log(`you won! ${humanChoice} beats ${computerChoice}`)
+        humanScore++;
+    }
+
+    if (humanChoice === "paper" && computerChoice === "scissors" ||
+        humanChoice === "scissors" && computerChoice === "rock" ||
+        humanChoice === "rock" && computerChoice === "paper"
+        ) {
+        console.log(`you lost! ${humanChoice} gets beaten by ${computerChoice}`)
+        computerScore++;
     }
 }
 
@@ -58,30 +91,6 @@ function playGame() {
     function getHumanChoice() {
         // prompt the user for a choice between rock paper or scissors
         return prompt("rock, paper, or scissors?")
-    }
-
-    function playRound(humanChoice, computerChoice) {
-        humanChoice = humanChoice.toLowerCase();
-
-        if (humanChoice === computerChoice) {
-            console.log(`it's a tie! you both picked ${humanChoice}`)
-        }
-
-        if (humanChoice === "rock" && computerChoice === "scissors" ||
-            humanChoice === "paper" && computerChoice === "rock" ||
-            humanChoice === "scissors" && computerChoice === "paper"
-            ) {
-            console.log(`you won! ${humanChoice} beats ${computerChoice}`)
-            humanScore++;
-        }
-
-        if (humanChoice === "paper" && computerChoice === "scissors" ||
-            humanChoice === "scissors" && computerChoice === "rock" ||
-            humanChoice === "rock" && computerChoice === "paper"
-            ) {
-            console.log(`you lost! ${humanChoice} gets beaten by ${computerChoice}`)
-            computerScore++;
-        }
     }
 }
 
